@@ -1,85 +1,35 @@
 'use strict';
 
-console.log('app.js running.....');
-
-var app = {
-  title: 'Indecision App',
-  subTitle: 'This is some info',
-  options: ['One', 'Two']
-
-  // JSX - Javascript XML
-};var template = React.createElement(
-  'div',
-  null,
-  React.createElement(
-    'h1',
-    null,
-    app.title
-  ),
-  app.subTitle && React.createElement(
-    'p',
-    null,
-    app.subTitle
-  ),
-  React.createElement(
-    'p',
-    null,
-    app.options.length > 0 ? 'Here are your options' : 'No options'
-  ),
-  React.createElement(
-    'ol',
-    null,
-    React.createElement(
-      'li',
-      null,
-      'item 1'
-    ),
-    React.createElement(
-      'li',
-      null,
-      'item 2'
-    )
-  )
-);
-
-var user = {
-  name: 'Long',
-  age: 31,
-  location: 'Ho Chi Minh'
+// argument object - no longer bound with arrow function
+var add = function add(a, b) {
+  //console.log(arguments)
+  return a + b;
 };
 
-var userName = 'Long Vo';
-var userAge = 27;
-var userLocation = 'Ho Chi Minh';
+// this keyword - no longer bound with arrow function
+var user = {
+  name: 'Jackie',
+  cities: ['Ho Chi Minh', 'Ha Noi', 'Da Nang'],
+  printPlaceLived: function printPlaceLived() {
+    var _this = this;
 
-var getLocation = function getLocation(location) {
-  if (location) {
-    return React.createElement(
-      'p',
-      null,
-      'Location: ',
-      location
-    );
+    this.cities.forEach(function (city) {
+      console.log(_this.name + ' lived in ' + city);
+    });
+  }
+};
+user.printPlaceLived();
+
+var multiplier = {
+  numbers: [1, 3, 5, 8],
+  multiplyBy: 16,
+  multiply: function multiply() {
+    var _this2 = this;
+
+    return this.numbers.map(function (number) {
+      return _this2.multiplyBy * number;
+    });
   }
 };
 
-var template2 = React.createElement(
-  'div',
-  null,
-  React.createElement(
-    'h1',
-    null,
-    user.name ? user.name : 'Anonymous'
-  ),
-  user.age >= 18 && React.createElement(
-    'p',
-    null,
-    'Age: ',
-    user.age
-  ),
-  getLocation(user.location)
-);
-
-var appRoot = document.querySelector('#app'); // get app root element
-
-ReactDOM.render(template, appRoot); // render template to root element
+console.log(multiplier.multiply());
