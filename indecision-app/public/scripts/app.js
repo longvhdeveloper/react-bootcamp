@@ -1,35 +1,40 @@
 'use strict';
 
-// argument object - no longer bound with arrow function
-var add = function add(a, b) {
-  //console.log(arguments)
-  return a + b;
-};
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-// this keyword - no longer bound with arrow function
-var user = {
-  name: 'Jackie',
-  cities: ['Ho Chi Minh', 'Ha Noi', 'Da Nang'],
-  printPlaceLived: function printPlaceLived() {
-    var _this = this;
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-    this.cities.forEach(function (city) {
-      console.log(_this.name + ' lived in ' + city);
-    });
+var Person = function () {
+  function Person() {
+    var name = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 'Your Name';
+    var age = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 0;
+
+    _classCallCheck(this, Person);
+
+    this.name = name;
+    this.age = age;
   }
-};
-user.printPlaceLived();
 
-var multiplier = {
-  numbers: [1, 3, 5, 8],
-  multiplyBy: 16,
-  multiply: function multiply() {
-    var _this2 = this;
+  _createClass(Person, [{
+    key: 'getGreeting',
+    value: function getGreeting() {
+      return 'Hi ' + this.name;
+    }
+  }, {
+    key: 'getDescription',
+    value: function getDescription() {
+      var unit = this.age > 1 ? 'years' : 'year';
+      return this.name + ' is ' + this.age + ' ' + unit + ' old.';
+    }
+  }]);
 
-    return this.numbers.map(function (number) {
-      return _this2.multiplyBy * number;
-    });
-  }
-};
+  return Person;
+}();
 
-console.log(multiplier.multiply());
+var me = new Person('Long Vo', 31);
+console.log(me.getGreeting());
+console.log(me.getDescription());
+
+var other = new Person();
+console.log(other.getGreeting());
+console.log(other.getDescription());

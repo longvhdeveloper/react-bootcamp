@@ -4,9 +4,6 @@
   "author": "vlong",
   "main": "index.js",
   "license": "MIT",
-  "scripts": {
-    "dev:watch": "node_modules/.bin/babel src/playground/es6-arrow-function-2.js --out-file=public/scripts/app.js --presets=env,react --watch"
-  },
   "devDependencies": {
     "eslint": "^7.6.0",
     "eslint-config-standard": "^14.1.1",
