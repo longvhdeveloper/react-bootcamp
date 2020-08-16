@@ -4,6 +4,11 @@
   "author": "vlong",
   "main": "index.js",
   "license": "MIT",
+  "scripts": {
+    "serve": "live-server public/",
+    "build": "webpack",
+    "dev-server": "webpack-dev-server"
+  },
   "devDependencies": {
     "eslint": "^7.6.0",
     "eslint-config-standard": "^14.1.1",
@@ -11,12 +16,20 @@
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-react": "^7.20.5",
-    "eslint-plugin-standard": "^4.0.1"
+    "eslint-plugin-standard": "^4.0.1",
+    "webpack": "^4.44.1",
+    "webpack-cli": "^3.3.12"
   },
   "dependencies": {
+    "@babel/core": "^7.11.1",
+    "@babel/preset-env": "^7.11.0",
+    "@babel/preset-react": "^7.10.4",
     "babel-cli": "^6.26.0",
-    "babel-preset-env": "^1.7.0",
-    "babel-preset-react": "^6.24.1",
-    "live-server": "^1.2.1"
+    "babel-loader": "^8.1.0",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "live-server": "^1.2.1",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "webpack-dev-server": "^3.11.0"
   }
 }
