@@ -1,0 +1,106 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render ExpenseList with expenses empty 1`] = `
+<div>
+  <h1>
+    ExpenseList
+  </h1>
+  <table>
+    <thead>
+      <tr>
+        <th>
+          Description
+        </th>
+        <th>
+          Notes
+        </th>
+        <th>
+          Amount
+        </th>
+        <th>
+          Create at
+        </th>
+        <th>
+          Action
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td
+          colSpan="5"
+        >
+          No expenses
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;
+
+exports[`should render ExpneseList with expenses 1`] = `
+<div>
+  <h1>
+    ExpenseList
+  </h1>
+  <table>
+    <thead>
+      <tr>
+        <th>
+          Description
+        </th>
+        <th>
+          Notes
+        </th>
+        <th>
+          Amount
+        </th>
+        <th>
+          Create at
+        </th>
+        <th>
+          Action
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <ExpneseItem
+        expense={
+          Object {
+            "amount": 195,
+            "createAt": 0,
+            "description": "Dum",
+            "id": "1",
+            "notes": "",
+          }
+        }
+        key="0"
+      />
+      <ExpneseItem
+        expense={
+          Object {
+            "amount": 208,
+            "createAt": -86400000,
+            "description": "Rent",
+            "id": "2",
+            "notes": "",
+          }
+        }
+        key="1"
+      />
+      <ExpneseItem
+        expense={
+          Object {
+            "amount": 6500,
+            "createAt": 86400000,
+            "description": "Credit card",
+            "id": "3",
+            "notes": "",
+          }
+        }
+        key="2"
+      />
+    </tbody>
+  </table>
+</div>
+`;

@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import ExpenseItem from './ExpenseItem'
 import selectExpenses from '../selectors/expenses'
 
-const ExpenseList = (props) => (
+export const ExpenseList = (props) => (
   <div>
     <h1>ExpenseList</h1>
     <table>
@@ -17,9 +17,15 @@ const ExpenseList = (props) => (
         </tr>
       </thead>
       <tbody>
-        {props.expenses.map((expenseItem) => {
-          return <ExpenseItem expense={expenseItem} />
-        })}
+        {props.expenses.length === 0 ? (
+          <tr>
+            <td colSpan="5">No expenses</td>
+          </tr>
+        ) : (
+          props.expenses.map((expenseItem, index) => {
+            return <ExpenseItem key={index} expense={expenseItem} />
+          })
+        )}
       </tbody>
     </table>
   </div>

@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-const ExpneseItem = ({ expense, dispatch }) => {
+export const ExpneseItem = ({ expense }) => {
   return (
     <tr>
       <td>{expense.description}</td>

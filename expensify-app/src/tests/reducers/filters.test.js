@@ -30,12 +30,13 @@ test('should set sortBy to date', () => {
 })
 
 test('should set text filter', () => {
+  const text = 'bill'
   const state = filtersReducer(undefined, {
     type: 'SET_TEXT_FILTER',
-    text: 'bill',
+    text,
   })
 
-  expect(state.text).toBe('bill')
+  expect(state.text).toBe(text)
 })
 
 test('should set start date', () => {
